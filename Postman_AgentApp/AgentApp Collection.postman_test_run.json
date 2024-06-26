@@ -1,0 +1,265 @@
+{
+	"id": "f7ffacb6-1ac0-443b-b943-1991685386da",
+	"name": "AgentApp Collection",
+	"timestamp": "2024-06-23T18:19:13.166Z",
+	"collection_id": "32904286-31c8c3c7-16e6-4db5-8adf-4db507066150",
+	"folder_id": 0,
+	"environment_id": "32904286-6d3eed2b-bc70-451f-8c2a-f362018bdffb",
+	"totalPass": 5,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2024-06-23T18:19:07.498Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "266a6e72-ab80-4731-8e0f-c5b00b2ff3d0",
+			"name": "Create Driver",
+			"url": "https://partner.agentapp.ru/v1/insured_objects/drivers",
+			"time": 147,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				147
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "3a1d4c7b-7f8a-4825-a02c-365352f0541e",
+			"name": "Obtain token",
+			"url": "https://partner.agentapp.ru/v1/users/obtain-token",
+			"time": 168,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				168
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "34df3d87-9bcb-4235-ba33-d28095a59fb3",
+			"name": "Create Owner",
+			"url": "https://partner.agentapp.ru/v1/insured_objects/owners/natural_persons",
+			"time": 189,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				189
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ec4a388e-363c-4d21-b1ca-0af92c44f718",
+			"name": "Create Insurant",
+			"url": "https://partner.agentapp.ru/v1/insured_objects/owners/natural_persons",
+			"time": 198,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Status code is 201": true
+			},
+			"testPassFailCounts": {
+				"Status code is 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				198
+			],
+			"allTests": [
+				{
+					"Status code is 201": true
+				}
+			]
+		},
+		{
+			"id": "44ff9ff1-8edd-40cf-b76e-0fd33a018042",
+			"name": "Create Car",
+			"url": "https://partner.agentapp.ru/v1/insured_objects/cars",
+			"time": 198,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Save car ID to environment": true
+			},
+			"testPassFailCounts": {
+				"Save car ID to environment": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				198
+			],
+			"allTests": [
+				{
+					"Save car ID to environment": true
+				}
+			]
+		},
+		{
+			"id": "3a9d0fff-9b14-444d-ae01-2e0e1c47d03e",
+			"name": "Create Insured Object",
+			"url": "https://partner.agentapp.ru/v1/insured_objects/",
+			"time": 151,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				151
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "fa410af0-e6e9-4e96-b514-eae2ff283038",
+			"name": "Create Agreement",
+			"url": "https://partner.agentapp.ru/v1/agreements/calculations",
+			"time": 282,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				282
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "d6b029e7-0060-4dd1-bd47-d9e1ad4849f1",
+			"name": "Update Agreement",
+			"url": "https://partner.agentapp.ru/v1/agreements/f37341bb-3f05-4a93-95fe-ccd3f7a4f1ae",
+			"time": 579,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				579
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		},
+		{
+			"id": "897c8fd0-ad52-4e57-b682-aeed246c0092",
+			"name": "Obtain Calculation",
+			"url": "https://partner.agentapp.ru/v1/agreements/f37341bb-3f05-4a93-95fe-ccd3f7a4f1ae/results/TEST_COMPANY",
+			"time": 2659,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2659
+			],
+			"allTests": [
+				{
+					"Status code is 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 4571,
+	"collection": {
+		"requests": [
+			{
+				"id": "266a6e72-ab80-4731-8e0f-c5b00b2ff3d0",
+				"method": "POST"
+			},
+			{
+				"id": "3a1d4c7b-7f8a-4825-a02c-365352f0541e",
+				"method": "POST"
+			},
+			{
+				"id": "34df3d87-9bcb-4235-ba33-d28095a59fb3",
+				"method": "POST"
+			},
+			{
+				"id": "ec4a388e-363c-4d21-b1ca-0af92c44f718",
+				"method": "POST"
+			},
+			{
+				"id": "44ff9ff1-8edd-40cf-b76e-0fd33a018042",
+				"method": "POST"
+			},
+			{
+				"id": "3a9d0fff-9b14-444d-ae01-2e0e1c47d03e",
+				"method": "POST"
+			},
+			{
+				"id": "fa410af0-e6e9-4e96-b514-eae2ff283038",
+				"method": "POST"
+			},
+			{
+				"id": "d6b029e7-0060-4dd1-bd47-d9e1ad4849f1",
+				"method": "PATCH"
+			},
+			{
+				"id": "897c8fd0-ad52-4e57-b682-aeed246c0092",
+				"method": "POST"
+			}
+		]
+	}
+}
