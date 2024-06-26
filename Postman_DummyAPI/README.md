@@ -1,10 +1,11 @@
-Есть описание API: https://dummyapi.io/docs
+There is an API description: https://dummyapi.io/docs
 
-Создайте в Postman коллекцию запросов, которая включает в себя:
-•  Получение списка пользователей;
-•  Создание пользователя;
-•  Получение пользователя;
-•  Обновление пользователя;
-•  Удаление пользователя.
+Create a collection of requests in Postman that includes:
 
-При выполнении этого задания я создала коллекцию, параметризировала переменные, которые сохранены в коллекции. Написала Pre-request Script для передачи ключа аутентификации в заголовке запроса и парсинг индентификатора пользователя из тела ответа от сервера во вкладке Scripts в коллекцию переменных для переиспользования этого идентификатора с другими запросами. 
+Getting a list of users;
+Creating a user;
+Getting a user;
+Updating a user;
+Deleting a user.
+
+While completing this task, I created a collection, parameterized variables that are saved in the collection. I wrote a Pre-request Script to pass the authentication key in the request header and parse the user identifier from the response body from the server into the variables collection to reuse this identifier with other requests.
