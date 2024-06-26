@@ -1,82 +1,57 @@
 {
 	"info": {
-		"_postman_id": "4536f7d6-6371-4839-b731-b1860080956d",
-		"name": "Dummy API Collection",
+		"_postman_id": "ab1ac5bd-e00b-4c3f-9156-629f8612d36f",
+		"name": "DummyAPI",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "32904286"
+		"_exporter_id": "32904439"
 	},
 	"item": [
 		{
-			"name": "Get Users",
+			"name": "Get list of users",
 			"request": {
 				"method": "GET",
-				"header": [
-					{
-						"key": "app-id",
-						"value": "66486cf013d166b3c6323742"
-					}
-				],
+				"header": [],
 				"url": {
-					"raw": "https://dummyapi.io/data/v1/user",
-					"protocol": "https",
+					"raw": "{{baseURL}}/user?limit=5",
 					"host": [
-						"dummyapi",
-						"io"
+						"{{baseURL}}"
 					],
 					"path": [
-						"data",
-						"v1",
 						"user"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get User",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "app-id",
-						"value": "66486cf013d166b3c6323742"
-					}
-				],
-				"url": {
-					"raw": "https://dummyapi.io/data/v1/user/6649d717c28e60292de4c44b",
-					"protocol": "https",
-					"host": [
-						"dummyapi",
-						"io"
 					],
-					"path": [
-						"data",
-						"v1",
-						"user",
-						"6649d717c28e60292de4c44b"
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						}
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Create User",
+			"name": "Create user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const jsonData = pm.response.json();  \r",
+							"\r",
+							"// Store the created user's ID in the userId variable\r",
+							"pm.collectionVariables.set(\"userId\", jsonData.id);"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
-				"header": [
-					{
-						"key": "app-id",
-						"value": "66486cf013d166b3c6323742"
-					},
-					{
-						"key": "",
-						"value": "",
-						"disabled": true
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"firstName\": \"Victoria\",\r\n  \"lastName\": \"Kli\",\r\n  \"email\": \"victoria_k@gmail.com\"\r\n}\r\n",
+					"raw": "{\r\n    \"firstName\": \"Gandalf\",\r\n    \"lastName\": \"Grey\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"phone\": \"{{$randomPhoneNumber}}\",\r\n    \"picture\": \"https://cs4.pikabu.ru/post_img/big/2015/02/07/8/1423311862_113748956.jpg\",\r\n    \"location\": {\r\n        \"country\": \"Gondor\",\r\n        \"city\": \"Minas Tirith\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -84,15 +59,11 @@
 					}
 				},
 				"url": {
-					"raw": "https://dummyapi.io/data/v1/user/create",
-					"protocol": "https",
+					"raw": "{{baseURL}}/user/create",
 					"host": [
-						"dummyapi",
-						"io"
+						"{{baseURL}}"
 					],
 					"path": [
-						"data",
-						"v1",
 						"user",
 						"create"
 					]
@@ -101,18 +72,55 @@
 			"response": []
 		},
 		{
-			"name": "Update User",
+			"name": "Get user by Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/user/{{userId}}",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"user",
+						"{{userId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update user by Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"method": "PUT",
-				"header": [
-					{
-						"key": "app-id",
-						"value": "66486cf013d166b3c6323742"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"firstName\": \"Jane\",\r\n  \"lastName\": \"Doe\"\r\n}\r\n",
+					"raw": "{\r\n    \"lastName\": \"White\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -120,32 +128,35 @@
 					}
 				},
 				"url": {
-					"raw": "https://dummyapi.io/data/v1/user/6649d717c28e60292de4c44b",
-					"protocol": "https",
+					"raw": "{{baseURL}}/user/{{userId}}",
 					"host": [
-						"dummyapi",
-						"io"
+						"{{baseURL}}"
 					],
 					"path": [
-						"data",
-						"v1",
 						"user",
-						"6649d717c28e60292de4c44b"
+						"{{userId}}"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Delete User",
+			"name": "Delete user by Id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"request": {
 				"method": "DELETE",
-				"header": [
-					{
-						"key": "app-id",
-						"value": "66486cf013d166b3c6323742"
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "raw",
 					"raw": "",
@@ -156,21 +167,63 @@
 					}
 				},
 				"url": {
-					"raw": "https://dummyapi.io/data/v1/user/60d0fe4f5311236168a109d6",
-					"protocol": "https",
+					"raw": "{{baseURL}}/user/{{userId}}",
 					"host": [
-						"dummyapi",
-						"io"
+						"{{baseURL}}"
 					],
 					"path": [
-						"data",
-						"v1",
 						"user",
-						"60d0fe4f5311236168a109d6"
+						"{{userId}}"
 					]
 				}
 			},
 			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					"// Add the mandatory header app-id to every request\r",
+					"\r",
+					"pm.request.headers.add(\r",
+					"    {\r",
+					"        key: 'app-id',\r",
+					"        value: '{{app-id}}'\r",
+					"    }\r",
+					");"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "app-id",
+			"value": "6645165287f8f1a9fde09fc0",
+			"type": "string"
+		},
+		{
+			"key": "baseURL",
+			"value": "https://dummyapi.io/data/v1",
+			"type": "string"
+		},
+		{
+			"key": "userId",
+			"value": "",
+			"type": "string"
 		}
 	]
 }
